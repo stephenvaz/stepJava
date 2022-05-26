@@ -1,3 +1,5 @@
+package L1;
+
 import java.util.Scanner;
 
 class EvenOdd{
@@ -6,6 +8,7 @@ class EvenOdd{
 		System.out.print("Enter the range: ");
 		int a = sC.nextInt();
 		int b = sC.nextInt();
+		sC.close();
 		int count = 0;
 		System.out.println("Printing even numbers");
 		for(int i = a; i<=b; i++){
@@ -26,7 +29,6 @@ class EvenOdd{
 		}
 		System.out.print("No. of Odd Numbers:");
 		System.out.println(count);
-		
 	}
 }
 

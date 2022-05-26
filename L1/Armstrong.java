@@ -1,3 +1,5 @@
+package L1;
+
 import java.util.Scanner;
 import java.lang.Math;
 
@@ -7,6 +9,7 @@ class Armstrong {
 		System.out.print("Enter the range: ");
 		int a = sC.nextInt();
 		int b = sC.nextInt();
+		sC.close();
 		System.out.printf("Printing Armstrong numbers from %d to %d\n", a, b);
 		for (int i = a; i <= b; i++) {
 			int d = (int) (Math.log10(i)) + 1;

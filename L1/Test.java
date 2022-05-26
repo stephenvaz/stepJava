@@ -1,3 +1,5 @@
+package L1;
+
 import java.util.Scanner;
 
 class Prime {
@@ -6,6 +8,7 @@ class Prime {
 		System.out.print("Enter the range: ");
 		int a = sC.nextInt();
 		int b = sC.nextInt();
+		sC.close();
 		int count = 0;
 		for (int i = a; i <= b; i++) {
 			int flag = 1;

@@ -1,3 +1,5 @@
+package L1;
+
 import java.lang.Math; 
 
 class Mersenne{
