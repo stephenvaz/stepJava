@@ -1,4 +1,3 @@
-package L2;
 import java.util.Scanner;
 import java.lang.Math;
 
