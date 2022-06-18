@@ -3,7 +3,10 @@ import java.util.Scanner;
 class Data {
 	String mv, tmov, hname, hename;
 	double budget;
-	Data() {}
+
+	Data() {
+	}
+
 	Data(String mv, String tmov, String hname, String hename, double budget) {
 		this.mv = mv;
 		this.tmov = tmov;
@@ -50,12 +53,12 @@ class Movie {
 			hname = tsC.nextLine();
 			System.out.printf("Heroine: ");
 			hename = tsC.nextLine();
-			System.out.printf("BUdget: ");
+			System.out.printf("Budget: ");
 			budget = sC.nextInt();
 			dt[i] = new Data(mv, tmov, hname, hename, budget);
 		}
 		sC.close();
-		tsc.close();
+		tsC.close();
 		Data d = new Data();
 		d.sort(dt);
 		d.display(dt);
