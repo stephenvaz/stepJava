@@ -3,8 +3,11 @@ import java.util.Scanner;
 class Employee {
     String name, id;
     int age, type;
-    Employee(){}
-    Employee(String name, String id, int age, int type){
+
+    Employee() {
+    }
+
+    Employee(String name, String id, int age, int type) {
         this.type = type;
         this.name = name;
         this.id = id;
@@ -21,7 +24,7 @@ class SalariedEmployee extends Employee {
     public SalariedEmployee(String name, String id, int age, int type, double eS) {
         super(name, id, age, type);
         this.empSalary = (type == 0) ? eS : eS + 2000;
-        
+
     }
 
     double getSalary() {

@@ -1,42 +1,63 @@
 class Production {
     String title, director, writer;
-    static int sP, sM = 0;
+    static int perfs, seats, sP, sM = 0;
 
-    Production(String title, String director, String writer) {
+    Production() {
+    }
+
+    Production(String title, String director, String writer, int seats) {
         this.title = title;
         this.director = director;
         this.writer = writer;
-    }
-    @Override
-    public String toString() {
-        return "Title: " + this.title + "\nDirector: " + this.director + "\nWriter: " + this.writer;
+        Production.seats += seats;
     }
 }
+
 class Play extends Production {
-    int perfs;
-    Play(String title, String director, String writer, int perfs) {
-        super(title, director, writer);
-        this.perfs = perfs;
-        sP+=1;
+    Play(String title, String director, String writer, int seats) {
+        super(title, director, writer, seats);
+        perfs += 1;
+        sP += seats;
+    }
+
+    @Override
+    public String toString() {
+        return "Title: " + this.title + "\nDirector: " + this.director + "\nWriter: " + this.writer + "\n";
     }
 }
 
 class Musical extends Play {
-    int perfs;
+
     String composer, lyricist;
-    Musical(String title, String director, String writer, int perfs, String composer, String lyricist) {
-        super(title, director, writer,perfs);
-        this.perfs = perfs;
+
+    Musical(String title, String director, String writer, String composer, String lyricist, int seats) {
+        super(title, director, writer, seats);
         this.composer = composer;
         this.lyricist = lyricist;
-        sM+=1;
+        sM += seats;
+        sP -= seats;
+    }
+
+    @Override
+    public String toString() {
+        return "Title: " + this.title + "\nDirector: " + this.director + "\nWriter: " + this.writer + "\nComposer: "
+                + this.composer + "\nLyricist: " + this.lyricist + "\n";
     }
 }
 
 class Tester {
     public static void main(String[] args) {
-        Play p1 = new Play("t1", "d1", "w1", perfs)
-        Musical m1 = new Musical("The Nutcracker", "Walt Disney", "Judy Garland", 5, "Mozart", "Ludwig van Beethoven");
-        Musical m2 = new Musical("The Nutcracker", "Walt Disney", "Judy Garland", 5, "Mozart", "Ludwig van Beethoven");
+        Play p1 = new Play("t1", "d1", "w1", 1);
+        Play p2 = new Play("t2", "d2", "w2", 2);
+        Play p3 = new Play("t3", "d3", "w3", 3);
+        Musical m1 = new Musical("The Nutcracker", "Walt Disney", "Judy Garland", "Mozart", "Ludwig van Beethoven", 4);
+        Musical m2 = new Musical("m2", "md2", "mw2", "c2", "l2", 5);
+        System.out.println(p1);
+        System.out.println(p2);
+        System.out.println(p3);
+        System.out.println(m1);
+        System.out.println(m2);
+        System.out.printf("Total no. of performances: %d\nBox office collection: %d\n", Production.perfs,
+                Production.sP * 500 + Production.sM * 800);
     }
 }
