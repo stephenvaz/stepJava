@@ -48,7 +48,7 @@ class Tester {
             int days = sc.nextInt();
             int[] price = new int[days];
             for (int i = 0; i < days; i++) {
-                System.out.printf("Price of the %s for Day %d: ", name, i + 1);
+                System.out.printf("Price of %s for Day %d: ", name, i + 1);
                 price[i] = sc.nextInt();
             }
             t[j] = new Transaction(name, price);

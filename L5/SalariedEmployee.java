@@ -21,7 +21,7 @@ class SalariedEmployee extends Employee {
     SalariedEmployee() {
     }
 
-    public SalariedEmployee(String name, String id, int age, int type, double eS) {
+    SalariedEmployee(String name, String id, int age, int type, double eS) {
         super(name, id, age, type);
         this.empSalary = (type == 0) ? eS : eS + 2000;
 
@@ -36,15 +36,19 @@ class SalariedEmployee extends Employee {
         SalariedEmployee temp;
         for (i = 0; i < n; i++) {
             for (j = i + 1; j < n; j++) {
-                if (arr[i].empSalary > arr[j].empSalary) {
+                if (arr[i].empSalary < arr[j].empSalary) {
+
                     temp = arr[i];
                     arr[i] = arr[j];
                     arr[j] = temp;
                 }
             }
         }
-    }
 
+    }
+}
+
+class Main {
     public static void main(String[] args) {
         int n;
         Scanner sC = new Scanner(System.in);
@@ -54,8 +58,8 @@ class SalariedEmployee extends Employee {
         SalariedEmployee[] emp = new SalariedEmployee[n];
         for (int i = 0; i < n; i++) {
             System.out.printf("%d\nName, ID, Age, Type, Salary:-\n", i + 1);
-            String name = tsC.next();
-            String id = tsC.next();
+            String name = tsC.nextLine();
+            String id = tsC.nextLine();
             int age = sC.nextInt();
             int type = sC.nextInt();
             double empSalary = sC.nextDouble();
@@ -67,6 +71,6 @@ class SalariedEmployee extends Employee {
         SalariedEmployee sE = new SalariedEmployee();
         sE.top(emp, n);
         System.out.printf("Name: %s\nID: %s\nAge: %d\nSalary: %f\n", emp[0].name, emp[0].id, emp[0].age,
-                emp[0].empSalary);
+                emp[0].getSalary());
     }
 }
