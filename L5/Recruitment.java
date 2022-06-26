@@ -16,7 +16,6 @@ class Testing extends Recruitment {
         System.out.println("Please answer the following questions");
         for (int i = 0; i < ques.length; i++) {
             System.out.println(ques[i]);
-            String ans = tsC.nextLine();
 
         }
         tsC.close();
