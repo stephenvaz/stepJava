@@ -61,14 +61,14 @@ class Cal {
 
 	void display() {
 		int day = cal.get(Calendar.DAY_OF_MONTH);
-		int month = cal.get(Calendar.MONTH);
+		int month = cal.get(Calendar.MONTH) + 1;
 		int year = cal.get(Calendar.YEAR);
 		System.out.println("Today's date is " + day + "/" + month + "/" + year);
 	}
 
 	String increment_date(int days) {
 		cal.add(Calendar.DATE, days);
-		return cal.get(Calendar.DAY_OF_MONTH) + "/" + cal.get(Calendar.MONTH) + "/" + cal.get(Calendar.YEAR);
+		return cal.get(Calendar.DAY_OF_MONTH) + "/" + (cal.get(Calendar.MONTH) + 1) + "/" + cal.get(Calendar.YEAR);
 	}
 
 	void decr(int days) {

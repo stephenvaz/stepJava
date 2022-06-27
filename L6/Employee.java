@@ -2,6 +2,7 @@ class Employee {
     final double baseSalary = 10000;
     double bonus = 0;
     double sal = baseSalary;
+
     double getSalary() {
         return baseSalary;
     }
@@ -54,8 +55,9 @@ class Company {
         emp[1] = new Clerk();
         emp[2] = new Intern();
         for (int i = 0; i < emp.length; i++) {
-
-            System.out.printf("Salary of %s is %.2f\nBonus = %.2f\nTotal Salary = %.2f\n", emp[i].getClass().getSimpleName(), emp[i].getSalary(), emp[i].getBonus(), emp[i].getSalary() + emp[i].getBonus());
+            System.out.printf("Salary of %s is %.2f\nBonus = %.2f\nTotal Salary = %.2f\n\n",
+                    emp[i].getClass().getSimpleName(), emp[i].getSalary(), emp[i].getBonus(),
+                    emp[i].getSalary() + emp[i].getBonus());
         }
     }
 }
