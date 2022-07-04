@@ -39,7 +39,7 @@ class Tester {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         Scanner tsc = new Scanner(System.in);
-        System.out.print("Enter the no of stocks you want to add: ");
+        System.out.print("Enter the no. of stocks you want to add: ");
         int n = sc.nextInt();
         Transaction t[] = new Transaction[n];
         for (int j = 0; j < n; j++) {
