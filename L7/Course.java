@@ -92,7 +92,7 @@ class Test {
 		}
 		System.out.println("No. of IT students: ");
 		int nI = sC.nextInt();
-		IT[] it = new IT[nI];		
+		IT[] it = new IT[nI];
 		for (int i = 0; i < nI; i++) {
 			System.out.println("Student #" + (i + 1) + "\nName: ");
 			String name = tsC.nextLine();

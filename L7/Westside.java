@@ -14,7 +14,7 @@ abstract class Payment {
 
 class CashPayment extends Payment {
     double paymentDetails(int a, int b) {
-        if (amount > (a + b) * 5000) {
+        if (amount >= (a + b) * 5000) {
             amount -= (a + b) * 5000;
             return (a + b) * 5000;
         } else {
@@ -34,7 +34,7 @@ class CreditCardPayment extends Payment {
 
     double paymentDetails(int a, int b) {
 
-        if (amount > (a + b) * 5000) {
+        if (amount >= (a + b) * 5000) {
             amount -= (a + b) * 5000;
             return (a + b) * 5000;
         } else {
@@ -74,7 +74,7 @@ class Main {
             int choice = sC.nextInt();
             switch (choice) {
                 case 1:
-                eR();
+                    eR();
                     System.out.printf("%d clothes left\n", ws.clothes);
                     System.out.printf("Enter number of clothes: ");
                     clothes = sC.nextInt();
@@ -86,7 +86,7 @@ class Main {
                     }
                     break;
                 case 2:
-                eR();
+                    eR();
                     System.out.printf("%d accessories left\n", ws.accessories);
                     System.out.printf("Enter number of accessories: ");
                     accessories = sC.nextInt();
@@ -105,13 +105,12 @@ class Main {
                         case 1:
                             CashPayment cp = new CashPayment();
                             checkAmt = cp.paymentDetails(clothes, accessories);
-                            if((int)checkAmt != 0) {
+                            if ((int) checkAmt != 0) {
                                 System.out.printf("Payment of Rs.%.2f complete\n", checkAmt);
-                            }
-                            else {
+                            } else {
                                 System.out.printf("Not enough money\n");
                             }
-                            
+
                             break;
                         case 2:
                             System.out.printf("Enter name: ");
@@ -123,18 +122,18 @@ class Main {
                             CreditCardPayment ccp = new CreditCardPayment(name, exp, cc);
                             eR();
                             checkAmt = ccp.paymentDetails(clothes, accessories);
-                            if ((int)checkAmt != 0) {
+                            if ((int) checkAmt != 0) {
                                 System.out.printf("Payment of Rs.%.2f complete\nInvoice:- \nCard: %s\nExpiry: %s\n",
                                         checkAmt, ccp.cc, ccp.exp, ccp.name);
                             } else {
                                 System.out.printf("Not enough money\n");
-                            
+
                             }
-                            
+
                             break;
                         default:
                             System.out.printf("Wrong Input! Try Again\n");
-                            
+
                     }
                     checkAmt = 0;
                     break;
@@ -149,10 +148,10 @@ class Main {
                     System.out.printf("Invalid choice");
                     break;
             }
-            if(choice != 4) {
+            if (choice != 4) {
                 tsC.nextLine();
             }
-            
+
             eR();
         }
     }
