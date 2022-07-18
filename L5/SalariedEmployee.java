@@ -24,7 +24,7 @@ class SalariedEmployee extends Employee {
     SalariedEmployee(String name, String id, int age, int type, double eS) {
         super(name, id, age, type);
         this.empSalary = (type == 0) ? eS : eS + 2000;
-
+        //0 temporary, 1 or anything : permanent
     }
 
     double getSalary() {
@@ -37,14 +37,12 @@ class SalariedEmployee extends Employee {
         for (i = 0; i < n; i++) {
             for (j = i + 1; j < n; j++) {
                 if (arr[i].empSalary < arr[j].empSalary) {
-
                     temp = arr[i];
                     arr[i] = arr[j];
                     arr[j] = temp;
                 }
             }
         }
-
     }
 }
 
@@ -70,7 +68,7 @@ class Main {
         tsC.close();
         SalariedEmployee sE = new SalariedEmployee();
         sE.top(emp, n);
-        System.out.printf("Name: %s\nID: %s\nAge: %d\nSalary: %f\n", emp[0].name, emp[0].id, emp[0].age,
+        System.out.printf("Name: %s\nID: %s\nAge: %d\nSalary: %.2f\n", emp[0].name, emp[0].id, emp[0].age,
                 emp[0].getSalary());
     }
 }

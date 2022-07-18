@@ -12,7 +12,8 @@ class Consumer implements EatItHere, TakeAway {
     int orderNo;
     double price;
 
-    Consumer() {}
+    Consumer() {
+    }
 
     Consumer(int orderNo) {
         this.orderNo = orderNo;
@@ -37,6 +38,7 @@ class Consumer implements EatItHere, TakeAway {
         for (int i = 0; i < t; i++) {
             System.out.println("Enter the item number: ");
             int item = sc.nextInt();
+            item -= 1;
             if (item < food.length) {
                 System.out.println("The item ordered is: " + food[item]);
                 System.out.println("The price of the item ordered is: " + p[item]);
@@ -66,6 +68,7 @@ class Food {
             System.out.printf("Enter the price of item %d: ", i + 1);
             price[i] = sC.nextDouble();
         }
+        eR();
         Consumer c = new Consumer();
         while (true) {
             System.out.printf("1. TakeAway\n2. Restaurant\n3. Exit\n:");
@@ -92,6 +95,5 @@ class Food {
             sC.nextLine();
             eR();
         }
-
     }
 }

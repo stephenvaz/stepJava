@@ -10,8 +10,7 @@ interface CurrentAccount {
 
 class Customer implements SavingAccount, CurrentAccount {
     int accType;
-    double roI;
-    double balance;
+    double roI, balance;
 
     Customer(int accType, double roI, double balance) {
         this.accType = accType;
@@ -38,24 +37,24 @@ class Bank {
         Scanner sC = new Scanner(System.in);
         int accType;
         double roI, balance;
-            System.out.printf("Enter Account Type (1.Saving Account 2.Current Account): ");
-            accType = sC.nextInt();
-            System.out.printf("Enter Rate of Interest: ");
-            roI = sC.nextDouble();
-            System.out.printf("Enter Balance: ");
-            balance = sC.nextDouble();
-            eR();
-            Customer c = new Customer(accType, roI, balance);
-            switch (accType) {
-                case 1:
-                    System.out.printf("Interest: %.2f\n", c.getSimpleInterest());
-                    break;
-                case 2:
-                    System.out.printf("Interest: %.2f\n", c.getCompoudInterest());
-                    break;
-            }
-            sC.nextLine();
-            sC.nextLine();
-            eR();
+        System.out.printf("Enter Account Type (1.Saving Account 2.Current Account): ");
+        accType = sC.nextInt();
+        System.out.printf("Enter Rate of Interest: ");
+        roI = sC.nextDouble();
+        System.out.printf("Enter Balance: ");
+        balance = sC.nextDouble();
+        eR();
+        Customer c = new Customer(accType, roI, balance);
+        switch (accType) {
+            case 1:
+                System.out.printf("Interest: %.2f\n", c.getSimpleInterest());
+                break;
+            case 2:
+                System.out.printf("Interest: %.2f\n", c.getCompoudInterest());
+                break;
+        }
+        sC.nextLine();
+        sC.nextLine();
+        eR();
     }
 }
