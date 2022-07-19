@@ -25,7 +25,6 @@ class q2c {
                 sC.nextLine();
                 eR();
             }
-
         }
     }
 }

@@ -15,5 +15,4 @@ public class myPackage {
                 return 0;
         }
     }
-    
 }
