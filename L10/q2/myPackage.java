@@ -1,6 +1,6 @@
 package q2;
 
-public class myPackage {
+public class myPackage{
     public double calculateGST(int type, double amount) {
         switch(type) {
             case 1:

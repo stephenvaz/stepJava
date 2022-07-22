@@ -1,4 +1,4 @@
-import q2.myPackage;
+import q2.*;
 import java.util.Scanner;
 
 class q2c {
