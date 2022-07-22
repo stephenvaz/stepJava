@@ -17,6 +17,13 @@ abstract class Account {
 	abstract void display();
 }
 
+class MyException extends Exception {
+    public MyException(String s)
+    {
+        super(s);
+    }
+}
+
 class SavingsAccount extends Account {
 	double inR, minBal;
 
@@ -86,7 +93,7 @@ class Test {
 						System.out.printf("Enter the amount to be deposited: ");
 						amt = sC.nextDouble();
 						if (amt < 0) {
-							throw new Exception("Invalid amount");
+							throw new MyException("Invalid amount");
 						}
 						sA.deposit(amt);
 						System.out.printf("Transaction successful\n");
@@ -99,7 +106,7 @@ class Test {
 						System.out.printf("Enter the amount to be withdrawn: ");
 						amt = sC.nextDouble();
 						if (sA.bal < sA.minBal) {
-							throw new Exception("Please maintain minimum balance");
+							throw new MyException("Please maintain minimum balance");
 						} else if (amt < 0) {
 							throw new Exception("Invalid amount");
 						} else if (amt > sA.bal) {
@@ -156,6 +163,7 @@ class Test {
 					break;
 				case 7:
 					eR();
+					sC.close();
 					return;
 				default:
 					System.out.printf("Wrong Input!");

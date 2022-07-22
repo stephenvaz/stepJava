@@ -4,11 +4,6 @@ import java.util.Arrays;
 import java.util.InputMismatchException;
 
 class Test {
-    static void eR() {
-        System.out.print("\033[H\033[2J");
-        System.out.flush();
-    }
-
     public static void main(String[] args) {
         Stack<Integer> stk = new Stack<>();
         Scanner sC = new Scanner(System.in);
@@ -17,7 +12,7 @@ class Test {
         while (true) {
             System.out.println("1. Push\n2. Pop\n3. Display\n4. Exit");
             n = sC.nextInt();
-            eR();
+
             switch (n) {
                 case 1:
                     System.out.println("Enter the number of elements to be pushed");
@@ -102,9 +97,7 @@ class Test {
                 default:
                     System.out.println("Invalid input");
             }
-            sC.nextLine();
-            sC.nextLine();
-            eR();
+
         }
 
     }
